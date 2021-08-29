@@ -5,6 +5,7 @@ DEVICES=(
 	nash
 	dumpling
 	sagit
+	cheeseburger
 )
 #####################################
 
