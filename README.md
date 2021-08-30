@@ -2,7 +2,7 @@
 
 ## WARNING
 
-**DO NOT EVER TRY TO PORT IT TO *SONY* and *GOOGLE* DEVICES, **
+**DO NOT EVER TRY TO PORT IT TO *SONY* and *GOOGLE* DEVICES,**
 **YOUR UFS WILL BE ERASED**
 
 Basic edk2 implementation for msm8998, heavily based on lumingyu0423:s work with some really small modifications and added devices.
