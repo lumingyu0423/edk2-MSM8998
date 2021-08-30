@@ -24,7 +24,7 @@ Windows crashes because all 8 cores are enabled. With only single core enabled i
 
 ```bash
 git clone https://github.com/UsedNametag/edk2-MSM8998 --depth=1
-cd edk2-sdm845
+cd edk2-MSM8998
 ```
 
 2.Build this project
