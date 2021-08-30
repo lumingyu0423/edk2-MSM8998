@@ -52,3 +52,7 @@ Additionally, you can flash the image to recovery to achieve dual-boot.
 ```bash
 fastboot flash recovery boot_device.img
 ```
+
+## Porting a new device
+
+Acquire a device tree blob for device, rename the file to device.dtb (device is the codename of your phone) and add it to device_specific folder. Copy dumpling files on MSM8998Pkg\Devices folder, and rename them to match your device codename. Edit .dsc file to use proper .fdf file and modify the resolution to match your devices display.
