@@ -9,7 +9,19 @@ Basic edk2 implementation for msm8998, heavily based on lumingyu0423:s work with
 
 Beware of bugs, broken framebuffers and noob mistakes on code!
 
-Currenly supported devices:
+##Current issues
+
+-Broken graphics on UEFI setup
+
+-Windows does not boot if all cores are enabled
+
+-UFS bootblock gets erased if Windows has all QC drivers
+
+-Touch is not tested, it might not work
+
+-and a looooooooooooooooooot of other small stuff
+
+##Currenly supported devices:
 
 OnePlus 5 and 5T (cheeseburger, dumpling)
 
