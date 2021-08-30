@@ -6,6 +6,7 @@ DEVICES=(
 	dumpling
 	sagit
 	cheeseburger
+	chiron
 )
 #####################################
 
