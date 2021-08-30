@@ -9,7 +9,7 @@ Basic edk2 implementation for msm8998, heavily based on lumingyu0423:s work with
 
 Beware of bugs, broken framebuffers and noob mistakes on code!
 
-##Current issues
+## Current issues
 
 -Broken graphics on UEFI setup
 
@@ -21,7 +21,7 @@ Beware of bugs, broken framebuffers and noob mistakes on code!
 
 -and a looooooooooooooooooot of other small stuff
 
-##Currenly supported devices:
+## Currenly supported devices:
 
 OnePlus 5 and 5T (cheeseburger, dumpling)
 
