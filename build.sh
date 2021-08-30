@@ -7,6 +7,7 @@ DEVICES=(
 	sagit
 	cheeseburger
 	chiron
+	joan
 )
 #####################################
 
