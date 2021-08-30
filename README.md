@@ -17,3 +17,32 @@ Xiaomi Mi Mix 2 (chiron)
 
 
 Windows crashes because all 8 cores are enabled. With only single core enabled it can load, but drivers cause lun0 getting erased from UFS.
+
+## Building
+
+1.Clone this project (no need for recursive)
+
+```bash
+git clone https://github.com/UsedNametag/edk2-MSM8998 --depth=1
+cd edk2-sdm845
+```
+
+2.Build this project
+
+```bash
+bash build.sh --device device
+```
+
+3.Boot the image
+
+```bash
+fastboot boot boot_device.img
+```
+
+(device is the codename of your phone.)
+
+Additionally, you can flash the image to recovery to achieve dual-boot.
+
+```bash
+fastboot flash recovery boot_device.img
+```
