@@ -7,6 +7,8 @@
 
 Basic edk2 implementation for msm8998, heavily based on lumingyu0423:s work with some really small modifications and added devices.
 
+Beware of bugs, broken framebuffers and noob mistakes on code!
+
 Currenly supported devices:
 
 OnePlus 5 and 5T (cheeseburger, dumpling)
