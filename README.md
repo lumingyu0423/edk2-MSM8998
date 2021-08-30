@@ -6,9 +6,13 @@
 **YOUR UFS WILL BE ERASED**
 
 Basic edk2 implementation for msm8998, heavily based on lumingyu0423:s work with some really small modifications and added devices.
+
 Currenly supported devices:
+
 OnePlus 5 and 5T (cheeseburger, dumpling)
+
 Xiaomi Mi6 (sagit)
+
 Xiaomi Mi Mix 2 (chiron)
 
 
