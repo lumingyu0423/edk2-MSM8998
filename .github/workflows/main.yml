@@ -40,7 +40,9 @@ jobs:
 
       - name: Build device ${{ matrix.device }}
         run: |
-          ./build.sh --device ${{ matrix.device }}
+          chmod 777 build.sh
+          chmod +x build.sh
+          bash build.sh --device ${{ matrix.device }}
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
