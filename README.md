@@ -48,7 +48,7 @@ cd edk2-MSM8998
 2.Build this project
 
 ```bash
-bash build.sh --device device
+sudo bash build.sh --device device
 ```
 
 3.Boot the image
