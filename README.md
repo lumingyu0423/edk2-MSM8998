@@ -40,6 +40,8 @@ Samsung Galaxy S8 [Snapdragon] (dream)
 
 Samsung Galaxy Tab S4 (gts4llte)
 
+Asus ZenFone 4 Pro (zs551kl)
+
 
 
 
