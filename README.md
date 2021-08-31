@@ -36,6 +36,16 @@ LG V30 (joan)
 
 Windows crashes because all 8 cores are enabled. With only single core enabled it can load, but drivers cause lun0 getting erased from UFS.
 
+## Dependencies for building
+
+For Ubuntu and Debian:
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu abootimg python3-distutils python3-pil python3-git
+```
+
 ## Building
 
 Tested on Ubuntu 20.04 LTS and Debian 11, both on real hardware and WSL.
