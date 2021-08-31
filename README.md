@@ -35,6 +35,8 @@ LG V30 (joan)
 
 Samsung Galaxy S8 [Snapdragon] (dream)
 
+Samsung Galaxy Tab S4 (gts4llte)
+
 
 Windows crashes because all 8 cores are enabled. With only single core enabled it can load, but drivers cause lun0 getting erased from UFS.
 
