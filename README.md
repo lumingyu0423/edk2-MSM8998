@@ -11,11 +11,12 @@ Beware of bugs, broken framebuffers and noob mistakes on code!
 
 ## Current issues
 
+
 -Broken graphics on UEFI setup
 
 -Windows does not boot if all cores are enabled, and OS has QC drivers
 
--UFS bootblock gets erased if Windows has all QC drivers and it boots successfully (only if UEFI has 1 core enabled)
+-UFS lun0 bootblock gets erased if Windows has all QC drivers and it boots successfully (only if UEFI has 1 core enabled)
 
 -Touch is not tested, it might not work
 
@@ -40,7 +41,7 @@ Samsung Galaxy S8 [Snapdragon] (dream)
 Samsung Galaxy Tab S4 (gts4llte)
 
 
-Windows crashes because all 8 cores are enabled. With only single core enabled it can load, but drivers cause lun0 getting erased from UFS.
+
 
 ## Dependencies for building
 
