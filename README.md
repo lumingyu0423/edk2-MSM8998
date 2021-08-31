@@ -33,6 +33,8 @@ Motorola Moto Z2 Force (nash)
 
 LG V30 (joan)
 
+Samsung Galaxy S8 [Snapdragon] (dream)
+
 
 Windows crashes because all 8 cores are enabled. With only single core enabled it can load, but drivers cause lun0 getting erased from UFS.
 
