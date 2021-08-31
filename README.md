@@ -13,15 +13,15 @@ Beware of bugs, broken framebuffers and noob mistakes on code!
 
 -Broken graphics on UEFI setup
 
--Windows does not boot if all cores are enabled
+-Windows does not boot if all cores are enabled, and OS has QC drivers
 
--UFS bootblock gets erased if Windows has all QC drivers
+-UFS bootblock gets erased if Windows has all QC drivers and it boots successfully (only if UEFI has 1 core enabled)
 
 -Touch is not tested, it might not work
 
 -and a looooooooooooooooooot of other small stuff
 
-## Currenly supported devices:
+## Currently supported devices:
 
 OnePlus 5 and 5T (cheeseburger, dumpling)
 
