@@ -10,6 +10,7 @@ DEVICES=(
 	joan
 	dream
 	gts4llte
+	zs551kl
 )
 #####################################
 
