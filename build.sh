@@ -9,6 +9,7 @@ DEVICES=(
 	chiron
 	joan
 	dream
+	gts4llte
 )
 #####################################
 
