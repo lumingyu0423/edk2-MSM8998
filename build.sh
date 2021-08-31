@@ -8,6 +8,7 @@ DEVICES=(
 	cheeseburger
 	chiron
 	joan
+	dream
 )
 #####################################
 
