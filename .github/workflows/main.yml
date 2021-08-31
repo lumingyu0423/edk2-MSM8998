@@ -27,6 +27,9 @@ jobs:
           - nash
           - sagit
           - joan
+          - dream
+          - gts4llte
+          - zs551kl
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
