@@ -55,6 +55,8 @@ Samsung Galaxy Tab S4 (gts4llte)
 
 Asus ZenFone 4 Pro (zs551kl)
 
+Nokia 8 Sirocco (NB1)
+
 
 
 
