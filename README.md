@@ -33,6 +33,8 @@ Motorola Moto Z2 Force (nash)
 
 LG V30 (joan)
 
+## Maybe supported devices?
+
 Samsung Galaxy S8 [Snapdragon] (dream)
 
 Samsung Galaxy Tab S4 (gts4llte)
