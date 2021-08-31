@@ -38,6 +38,8 @@ Windows crashes because all 8 cores are enabled. With only single core enabled i
 
 ## Building
 
+Tested on Ubuntu 20.04 LTS and Debian 11, both on real hardware and WSL.
+
 1.Clone this project (no need for recursive)
 
 ```bash
