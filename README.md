@@ -22,6 +22,19 @@ Beware of bugs, broken framebuffers and noob mistakes on code!
 
 -and a looooooooooooooooooot of other small stuff
 
+## What works for now:
+
+-Booting Linux (and Android via GRUB)
+
+-UFS
+
+-All 8 cores on 4+4 cluster
+
+-Partial mega-broken ACPI
+
+-USB
+
+
 ## Currently supported devices:
 
 OnePlus 5 and 5T (cheeseburger, dumpling)
