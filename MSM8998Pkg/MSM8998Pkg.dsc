@@ -99,8 +99,8 @@
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
 
   # We bring up eight cores here!
-  gArmPlatformTokenSpaceGuid.PcdCoreCount|8
-  gArmPlatformTokenSpaceGuid.PcdClusterCount|2
+  gArmPlatformTokenSpaceGuid.PcdCoreCount|1
+  gArmPlatformTokenSpaceGuid.PcdClusterCount|1
 
   #
   # ARM PrimeCell

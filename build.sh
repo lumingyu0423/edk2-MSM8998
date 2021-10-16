@@ -3,6 +3,15 @@
 ##### Change this to add device #####
 DEVICES=(
 	nash
+	dumpling
+	sagit
+	cheeseburger
+	chiron
+	joan
+	dream
+	gts4llte
+	zs551kl
+	nb1
 	chiron
 )
 #####################################
