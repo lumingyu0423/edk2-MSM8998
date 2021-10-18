@@ -320,7 +320,7 @@ AddOutput (
 }
 
 STATIC
-VOID
+UINT16
 PlatformRegisterFvBootOption (
   CONST EFI_GUID                   *FileGuid,
   CHAR16                           *Description,
@@ -335,6 +335,7 @@ PlatformRegisterFvBootOption (
   MEDIA_FW_VOL_FILEPATH_DEVICE_PATH FileNode;
   EFI_LOADED_IMAGE_PROTOCOL         *LoadedImage;
   EFI_DEVICE_PATH_PROTOCOL          *DevicePath;
+  UINT16                            OptionNumber;
 
   Status = gBS->HandleProtocol (
                   gImageHandle,
@@ -377,8 +378,10 @@ PlatformRegisterFvBootOption (
     Status = EfiBootManagerAddLoadOptionVariable (&NewOption, MAX_UINTN);
     ASSERT_EFI_ERROR (Status);
   }
+  OptionNumber = NewOption.OptionNumber;
   EfiBootManagerFreeLoadOption (&NewOption);
   EfiBootManagerFreeLoadOptions (BootOptions, BootOptionCount);
+  return OptionNumber;
 }
 
 
@@ -508,7 +511,7 @@ PlatformRegisterOptionsAndKeys (
   ASSERT_EFI_ERROR (Status);
 
   //
-  // Map F2 and ESC to Boot Manager Menu
+  // Map UP and ESC to Boot Manager Menu or SimpleInitGUI
   //
   UP.ScanCode     = SCAN_UP;
   UP.UnicodeChar  = CHAR_NULL;
@@ -516,9 +519,26 @@ PlatformRegisterOptionsAndKeys (
   Esc.UnicodeChar = CHAR_NULL;
   Status = EfiBootManagerGetBootManagerMenu (&BootOption);
   ASSERT_EFI_ERROR (Status);
+  #ifdef ENABLE_SIMPLE_INIT
+  //
+  // Search all boot options
+  //
+  EfiBootManagerRefreshAllBootOption ();
+
+  //
+  // Register Simple Init GUI APP
+  //
+  UINT16 OptionSimpleInit = PlatformRegisterFvBootOption (
+    &gSimpleInitFileGuid, L"Simple Init", LOAD_OPTION_ACTIVE
+  );
+  Status = EfiBootManagerAddKeyOptionVariable (
+             NULL, (UINT16) OptionSimpleInit, 0, &UP, NULL
+             );
+  #else
   Status = EfiBootManagerAddKeyOptionVariable (
              NULL, (UINT16) BootOption.OptionNumber, 0, &UP, NULL
              );
+  #endif
   ASSERT (Status == EFI_SUCCESS || Status == EFI_ALREADY_STARTED);
   Status = EfiBootManagerAddKeyOptionVariable (
              NULL, (UINT16) BootOption.OptionNumber, 0, &Esc, NULL
@@ -705,7 +725,11 @@ PlatformBootManagerAfterConsole (
       Print (VERSION_STRING_PREFIX L"%s\n",
         PcdGetPtr (PcdFirmwareVersionString));
     }
-    Print (L"Press ESCAPE for boot options ");
+    #ifdef ENABLE_SIMPLE_INIT
+    Print (L"Press any side button for SimpleInitGUI");
+    #else
+    Print (L"Press any side button for Boot Options");
+    #endif
   } else if (FirmwareVerLength > 0) {
     Status = gBS->HandleProtocol (gST->ConsoleOutHandle,
                     &gEfiGraphicsOutputProtocolGuid, (VOID **)&GraphicsOutput);
@@ -742,15 +766,17 @@ PlatformBootManagerAfterConsole (
   //
   // Register UEFI Shell
   //
+  PlatformRegisterFvBootOption (
+  &gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE
+  );
    
-	
-   /*PlatformRegisterFvBootOption (
-	&gEfiAblFvNameGuid, L"Android Fastboot App", LOAD_OPTION_ACTIVE
-	);*/
-    PlatformRegisterFvBootOption (
-    &gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE
-    );
-
+  //
+  // Register Mass Storage App
+  //
+  PlatformRegisterFvBootOption (
+  &gUsbfnMsdAppFileGuid, L"Mass Storage", LOAD_OPTION_ACTIVE
+  );
+   
 }
 
 /**
@@ -778,7 +804,11 @@ PlatformBootManagerWaitCallback (
   Status = BootLogoUpdateProgress (
              White.Pixel,
              Black.Pixel,
-             L"Press ESCAPE for boot options",
+  #ifdef ENABLE_SIMPLE_INIT
+             L"Press any side button for SimpleInitGUI",
+  #else
+             L"Press any side button for Boot Options",
+  #endif
              White.Pixel,
              (Timeout - TimeoutRemain) * 100 / Timeout,
              0

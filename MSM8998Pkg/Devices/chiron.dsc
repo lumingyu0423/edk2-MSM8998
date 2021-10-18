@@ -11,6 +11,9 @@
 
 !include MSM8998Pkg/MSM8998Pkg.dsc
 
+[BuildOptions.common]
+  GCC:*_*_AARCH64_CC_FLAGS = -DXIAOMI_PIL_FIXED=1 -DDISPLAY_DPI=410 -DENABLE_SIMPLE_INIT
+
 [PcdsFixedAtBuild.common]
   # System Memory (4GB)
   gArmTokenSpaceGuid.PcdSystemMemorySize|0xF0000000
