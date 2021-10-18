@@ -1,106 +1,103 @@
 # EDK2 UEFI Firmware For Snapdragon 835 (MSM8998)
 
+[Chinese version (中文版)](https://github.com/lumingyu0423/edk2-MSM8998/blob/new/README.zh.md)
+
+## Resources
+
+[Telegram group](https://t.me/joinchat/MNjTmBqHIokjweeN0SpoyA)
+
+[Discord group](https://discord.gg/XXBWfag)
+
+QQ chinese group: 697666196 (Main group, full)  996450026 (Second group)  737223105 (Linux/edk2)
+
+[Windows Drivers](https://github.com/edk2-porting/WOA-Drivers)
+
+[Project website](https://renegade-project.org/)
+
+[Project forum](https://forum.renegade-project.org/)
+
 ## WARNING
 
 **DO NOT EVER TRY TO PORT IT TO *SONY* and *GOOGLE* DEVICES,**
-**YOUR UFS WILL BE ERASED**
+**YOUR UFS WILL BE WIPED CLEAN!!!**
 
 Basic edk2 implementation for msm8998, heavily based on lumingyu0423:s work with some really small modifications and added devices.
 
 Beware of bugs, broken framebuffers and noob mistakes on code!
 
-## Current issues
+## Supported devices
 
+1. OnePlus 5 and 5T (cheeseburger, dumpling)
+2. Xiaomi Mi6 (sagit)
+3. Xiaomi Mi Mix 2 (chiron)
+4. Motorola Moto Z2 Force (nash)
+5. LG V30 (joan)
 
--Broken graphics on UEFI setup
+Supported devices(need test)
+1. Samsung Galaxy S8 [Snapdragon] (dream)
+2. Samsung Galaxy Tab S4 (gts4llte)
+3. Asus ZenFone 4 Pro (zs551kl)
+4. Nokia 8 Sirocco (NB1)
 
--Windows does not boot if all cores are enabled, and OS has QC drivers
+## Dependencies
 
--UFS lun0 bootblock gets erased if Windows has all QC drivers and it boots successfully (only if UEFI has 1 core enabled)
+For Windows/MacOS/Other Linux distributions:
 
--Touch is not tested, it might not work
+Install Docker manually or use an Ubuntu virtual machine
 
--and a looooooooooooooooooot of other small stuff
-
-## What works for now:
-
--Booting Linux (and Android via GRUB)
-
--UFS
-
--All 8 cores on 4+4 cluster
-
--Partial mega-broken ACPI
-
--USB
-
-
-## Currently supported devices:
-
-OnePlus 5 and 5T (cheeseburger, dumpling)
-
-Xiaomi Mi6 (sagit)
-
-Xiaomi Mi Mix 2 (chiron)
-
-Motorola Moto Z2 Force (nash)
-
-LG V30 (joan)
-
-## Maybe supported devices?
-
-Samsung Galaxy S8 [Snapdragon] (dream)
-
-Samsung Galaxy Tab S4 (gts4llte)
-
-Asus ZenFone 4 Pro (zs551kl)
-
-Nokia 8 Sirocco (NB1)
-
-
-
-
-## Dependencies for building
-
-For Ubuntu and Debian:
+For Ubuntu 20.04:
 
 ```bash
 sudo apt update
 sudo apt upgrade
-sudo apt install build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu abootimg python3-distutils python3-pil python3-git
+sudo apt install build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu abootimg python3-distutils python3-pil python3-git gettext
 ```
 
 ## Building
 
-Tested on Ubuntu 20.04 LTS and Debian 11, both on real hardware and WSL.
-
-1.Clone this project (no need for recursive)
+1.Clone this project
 
 ```bash
-git clone https://github.com/UsedNametag/edk2-MSM8998 --depth=1
+git clone https://github.com/lumingyu0423/edk2-MSM8998.git --depth=1
 cd edk2-MSM8998
 ```
 
-2.Build this project
+2.1 Build this project (only on linux)
 
 ```bash
-sudo bash build.sh --device device
+bash build.sh --device DEVICE
 ```
+
+2.2 For Macos/Windows (you can use docker)
+
+````bash
+docker-compose run edk2 ./build.sh -d DEVICE
+````
 
 3.Boot the image
 
 ```bash
-fastboot boot boot_device.img
+fastboot boot boot_DEVICE.img
 ```
 
-(device is the codename of your phone.)
+(DEVICE is the codename of your phone.)
 
 Additionally, you can flash the image to recovery to achieve dual-boot.
 
 ```bash
-fastboot flash recovery boot_device.img
+fastboot flash recovery boot_DEVICE.img
 ```
 
-## Porting a new device
+## Credits
 
-Acquire a device tree blob for device, rename the file to 'device'.dtb ('device' is the codename of your phone) and add it to device_specific folder. Copy dumpling files on MSM8998Pkg\Devices folder, and rename them to match your device codename. Edit 'device'.dsc file to use proper 'device'.fdf file and modify the resolution to match your devices display.
+`fxsheep` for his original `edk2-sagit`
+
+`strongtz` for maintaining Renegade Project
+
+`BigfootACA` for build script
+
+`Lemon_Ice` and `NTAuthority` for guidance and some blobs
+
+`@Freak2112`, `TAO_Croatia` and `废物` for working hard on testing and debugging
+
+`NekokeCore` for fixing MemoryMap
