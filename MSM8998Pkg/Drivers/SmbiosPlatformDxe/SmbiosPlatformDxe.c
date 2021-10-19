@@ -32,14 +32,14 @@
   __DATE__"\0"                         /* BiosReleaseDate */
 
 #define TYPE1_STRINGS                                   \
-  "QCOM\0"                         /* Manufacturer */ \
-  "MSM8998WP\0"                     /* Product Name */ \
-  "None\0"                           /* Version */      \
+  "Unknown Manufacturer\0"           /* Manufacturer */ \
+  "Unknown Device\0"                  /* Product Name */ \
+  "Version Unknown\0"                   /* Version */      \
   "                    \0"           /* 20 character buffer */
 
 #define TYPE2_STRINGS                                     \
-  "QCOM\0"                         /* Manufacturer */   \
-  "MSM8998WP\0"                     /* Product Name */   \
+  "Unknown Manufacturer\0"           /* Manufacturer */   \
+  "Unknown Device\0"                  /* Product Name */   \
   "R0\0"                             /* Version */        \
   "Serial Not Set\0"                 /* Serial */         \
   "Base of Chassis\0"                /* board location */ \
