@@ -94,10 +94,6 @@ fastboot flash recovery boot_DEVICE.img
 
 `strongtz` for maintaining Renegade Project
 
-`BigfootACA` for build script
+`BigfootACA` for build script and SimpleInit
 
-`Lemon_Ice` and `NTAuthority` for guidance and some blobs
 
-`@Freak2112`, `TAO_Croatia` and `废物` for working hard on testing and debugging
-
-`NekokeCore` for fixing MemoryMap

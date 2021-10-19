@@ -97,10 +97,5 @@ fastboot flash recovery boot_DEVICE.img
 
 感谢`strongtz`维护Renegade Project
 
-感谢`BigfootACA`的编译脚本
+感谢`BigfootACA`的编译脚本和SimpleInit
 
-感谢`Lemon_Ice`和`NTAuthority`提供指导以及一些有用的blob
-
-感谢`@Freak2112`, `TAO_Croatia`和`废物`的实机调试
-
-感谢`NekokeCore`参与了MemoryMap的修复
