@@ -237,7 +237,6 @@ APRIORI DXE {
         // SECTION RAW = MSM8998Pkg/AcpiTables/8998/MCFG.aml
         // SECTION RAW = MSM8998Pkg/AcpiTables/8998/CSRT.aml
         // SECTION RAW = MSM8998Pkg/AcpiTables/asus/facp.aml
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/bgrt.acp
         SECTION RAW = MSM8998Pkg/AcpiTables/asus/Csrt.acp
         SECTION RAW = MSM8998Pkg/AcpiTables/asus/dbg2.acp
         SECTION RAW = MSM8998Pkg/AcpiTables/asus/Facp.acp
